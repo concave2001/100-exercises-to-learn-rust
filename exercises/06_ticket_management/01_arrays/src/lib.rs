@@ -2,6 +2,8 @@
 
 pub struct WeekTemperatures {
     // TODO
+    weekdays: [Weekday; 7],
+    temps: [Option<i32>; 7],
 }
 
 pub enum Weekday {
@@ -16,15 +18,36 @@ pub enum Weekday {
 
 impl WeekTemperatures {
     pub fn new() -> Self {
-        todo!()
+        //todo!()
+
+        let weekdays: [Weekday; 7] = [
+            Weekday::Monday,
+            Weekday::Tuesday,
+            Weekday::Wednesday,
+            Weekday::Thursday,
+            Weekday::Friday,
+            Weekday::Saturday,
+            Weekday::Sunday
+        ];
+
+        let temps: [Option<i32>; 7] = [
+            None; 7
+        ];
+
+        WeekTemperatures {
+            weekdays: weekdays,
+            temps: temps
+        }
     }
 
     pub fn get_temperature(&self, day: Weekday) -> Option<i32> {
-        todo!()
+        self.temps[day as usize]
+        
     }
 
     pub fn set_temperature(&mut self, day: Weekday, temperature: i32) {
-        todo!()
+        //todo!()
+        self.temps[day as usize] = Some(temperature);
     }
 }
 
